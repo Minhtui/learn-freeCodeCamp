@@ -1,0 +1,143 @@
+/* toàn cục */
+* {
+  /* box-sizing: xác định cách tính toán kích thước của phần tử */
+  /* [content-box]:  kích thước chỉ tính dựa trên nội dung của phần tử và không bao gồm padding và border.*/
+  /* [border-box]: kích thước của phần tử sẽ bao gồm tất cả các phần: nội dung, padding và border, và nội dung sẽ co lại nếu cần thiết để vừa với padding và border.*/
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f5f6f7;
+}
+
+.header {
+  /* text-align: căn chỉnh văn */
+  /* [left] 
+    [right] 
+    [center] 
+    [justify]:căn chỉnh văn bản sao cho các dòng đều được căn đều từ trái sang phải, trừ khi là dòng cuối cùng */
+  text-align: center;
+
+  /* text-transform: thay đổi kiểu chữ văn bản */
+  /* [none]:giữ nguyên 
+    [capitalize]:viết hoa chữ cái đầu 
+    [uppercase]:chuyển đổi all thành chữ hoa 
+    [lowercase]:chuyển đổi all thành chữ thường */
+  text-transform: uppercase;
+
+  padding: 32px;
+  background-color: #0a0a23;
+  color: #fff;
+
+  /* border-bottom: [kích thước] [kiểu] [màu] */
+  /* [solid]:đường thẳng, 
+    [dashed]:đường gạch chân đứt, 
+    [dotted]:đường chấm chấm, 
+    [double]:đường đôi */
+  border-bottom: 4px solid #fdb347;
+}
+
+.gallery {
+  /* width: 50%; */
+
+  /* border: [kích thước] [kiểu] [màu] */
+  /* [solid]:đường thẳng, 
+    [dashed]:đường gạch chân đứt, 
+    [dotted]:đường chấm chấm, 
+    [double]:đường đôi */
+  /* border: 5px solid red; */
+
+  /* display: xác định cách một phần tử hiển thị */
+  /* [flex]:hiển thị phần tử như một flex container, sử dụng flexbox để tự động sắp xếp, căn chỉnh, phân phối phần tử con,
+    [block]:hiển thị phần tử như một khối, chiểm toàn bộ chiều rộng củ phần tử cha và bắt đầu trên một dòng mới,
+    [inline]:hiển thị phần tử như một phần tử trên cùng một dòng với các phần tử khác và chỉ chiếm chiều rộng cần thiết cho nội dung,
+    [inline-block]:kết hợp inline và block, cho phép hiển thị trên cùng một dòng với các phần tử khác nhưng cũng có thể thiết lập kích thước và padding,
+    [grid]:hiển thị phần tử như một grid container, cho phép sử dụng css grid   để tạo lưới linh hoạt */
+
+  /* display: flex:các phần tử bên trong tự động điều chỉnh và sắp xếp theo quy tắc flexbox */
+  display: flex;
+
+  /* flex-direction: xác định hướng sắp xếp các phần tử con */
+  /* [row]:sắp xếp phần tử con từ trái -> phải
+    [row-reverse]:sắp xếp phần tử con từ phải -> trái
+    [column]:sắp xếp phần tử con từ trên -> dưới
+    [column-reverse]:sắp xếp phần tử con từ dưới -> trên */
+  flex-direction: row;
+
+  /* flex-wrap:xác định các phần tử con trong flex container được xếp chồng lên nhau khi không đủ không gian, hoặc khi cần thiết */
+  /* [nowrap]:không xuống dòng dù không đủ không gian
+    [wrap]:tự động xuống dòng nếu không đủ không gian
+    [wrap-reverse]:tự động xuống dòng nhưng theo hướng ngược lại */
+  flex-wrap: wrap;
+
+  /* justify-content:sử dụng căn chỉnh các phần tử con bên trong flex container theo hướng chính của flexbox */
+  /* [flex-start]:các phần tử con được căn chỉnh về 'phía đầu' của flex container
+    [flex-end]:các phần tử con được căn chỉnh về 'phía cuối' của flex container
+    [center]:các phần tử con được căn chỉnh về 'giữa' của flex container
+    [space-between]: các phần tử con phân bố đầu cuối nằm ở mép flex container và các phần tử con còn lại phân bố đều dọc theo trục chính với khoảng cách đều nhau giữa chúng
+    [space-around]:các phần tử con phân bổ đầu cuối, khoảng cách giữa các phần tử con sẽ được chia đều ở hai bên của mỗi phần tử */
+    justify-content: center;
+
+    /* align-items:căn chỉnh các phần tử con bên trong flex container theo hướng của trục chính, khi trục chính được xác định flex-direction */
+    /* [flex-start]:các phần tử con được căn chỉnh về 'phía đầu' của trục chính của flex container
+      [flex-end]:các phần tử con được căn chỉnh về 'phía cuối' của trục chính của flex container
+      [center]:các phần tử con được căn chỉnh về 'giữa' của trục chính của flex container
+      [baseline]:các phần tử con được chỉnh dựa trên các dòng cơ sở của chúng
+      [stretch]:các phần tử con sẽ được kéo ra để đạt đến chiều cao của flex container */
+    align-items: center;
+
+    /* padding: [top-bottom] [right-left] */
+    padding: 20px 10px;
+    /* max-width: tối đa chiều rộng */
+    max-width: 1400px;
+    /* margin: [top-bottom] [right-left] */
+    margin: 0 auto;
+    /* gap: thiết lập khoảng cách giữa các cột và hàng trong một lưới(grid) hoặc giữa các phần tử trong flex container */
+    gap: 16px;
+}
+
+/* ::after: pseudo-element: tạo ra phần tử ảo, chèn vào cuối của phần tử nguyên thủy */
+.gallery::after {
+  content: "";
+  width: 350px;
+}
+
+img {
+  /* width: 100%; */
+
+  /* padding: khoảng cách giữa nội dung và đường viền */
+  /* padding: top right bottom left */
+  /* padding: 5px; */
+
+  /* border: [kích thước] [kiểu] [màu] */
+  /* [solid]:đường thẳng, 
+    [dashed]:đường gạch chân đứt, 
+    [dotted]:đường chấm chấm, 
+    [double]:đường đôi */
+  /* border: 5px solid blue; */
+}
+
+/* img là 'con' của .gallery */
+.gallery img {
+  /*width: tự động điều chỉnh kích thước của hình ảnh để phù hợp với chiều rộng của phần tử 'cha' */
+  width: 100%;
+
+  /*max-width: giới hạn chiều rộng tối đa */
+  max-width: 350px;
+
+  height: 300px;
+
+  /* object-fit: kiểm soát hình ảnh hoặc video được căn chỉnh và định hình bên trong phần tử. Thường sử dụng khi kích thước của hình ảnh hoặc video không khớp hoàn toàn với kích thước của phần tử chứa nó */
+  /* [fill]:hình ảnh bị kéo ra hoặc co lại để điền vào kích thước của phần tử mà không giữ tỷ lệ khung hình ban đầu. Điều này dẫn đến biến dạng hình ảnh
+    [contain]:hình ảnh bị kéo ra hoặc co lại để vừa vào phần tử mà vẫn giữ tỷ lệ khung hình ban đầu
+    [cover]:hình ảnh bị kéo ra hoặc co lại để điền vào kích thước của phần tử và lấp đầy nó hoàn toàn, không quan trọng việc cắt bớt hoặc mở rộng hình ảnh
+    [none]:hình ảnh không thay đổi và hiển thị dựa trên kích thước phần tử, có thể biến dạng hình ảnh nếu tỷ lệ không phụ hợp
+    [scale-down]:hình ảnh sẽ co lại nếu nó lớn hơn phần tử, nhưng sẽ không được phóng to nếu nhỏ hơn phần tử */
+  object-fit: cover;
+
+  /* border-radius: tạo ra các góc tròn hoặc góc bo tròn cho các phần tử */
+  border-radius: 10px;
+}
+
